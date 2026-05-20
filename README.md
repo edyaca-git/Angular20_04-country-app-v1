@@ -1,4 +1,14 @@
-# 04CountryApp
+# 04CountryApp v1
+Temas puntuales
+En esta sección aprenderemos y reforzaremos temas como:
+  1.- Rutas hijas
+  2.-Rutas Anidadas
+  3.-Creación y comunicación entre componentes
+  4.-Tailwind y DaisyUI
+  5.-Archivo de rutas por feature / module
+  6.-Carga perezosa de módulos de rutas
+El objetivo es armar la aplicación que luego haremos funcionar.
+
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.16.
 
