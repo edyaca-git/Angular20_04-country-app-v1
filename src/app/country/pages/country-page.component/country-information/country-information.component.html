@@ -1,0 +1,54 @@
+<!-- <section class="mx-10">
+    <div class="avatar">
+        <div class="mask mask-squircle w-24">
+            <img src="{{ country().flag }}" />
+        </div>
+    </div>
+
+    <h1 class="text-3xl">{{ country().name }}</h1>
+    <h1 class="text-3xl">{{ country().capital }}</h1>
+    <h2 class="text-xl font-thin">Población: {{ country().population | number }}</h2>
+</section> -->
+
+<section class="stats shadow">
+  <div class="stat">
+    <div class="stat-figure text-primary">
+    <div class="avatar">
+        <div class="mask mask-squircle w-24">
+            <img src="{{ country().flag }}" />
+        </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title text-primary text-[24px]">Pais</div>
+    <div class="stat-value text-primary">{{ country().name }}</div>
+    <div class="status-desc  text-primary  text-[18px]">Capital: {{ country().capital }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title  text-[24px]">Población</div>
+    <div class="stat-value">{{ country().population | number }}</div>
+    <div class="stat-desc  text-[18px]">Del {{ currentYear() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title text-[24px]">Region</div>
+    <div class="stat-value text-secondary">{{ country().region }}</div>
+    <div class="stat-desc  text-secondary text-[18px]">Subregion: {{ country().subregion }}</div>
+  </div>
+
+</section>
+
+<figure class="diff aspect-16/9 max-w-sm mx-auto" tabindex="0">
+  <div class="diff-item-1" role="img" tabindex="0">
+    <img [alt]="country().name" [src]="country().flagSvg" />
+  </div>
+  <div class="diff-item-2" role="img">
+    <img class="blur brightness-75"
+      [alt]="country().name"
+      [src]="country().flagSvg" />
+  </div>
+  <div class="diff-resizer"></div>
+</figure>

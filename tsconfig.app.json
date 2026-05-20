@@ -4,6 +4,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
+    "rootDir": "./src",   /* se agrega esta linea para que el compilador sepa donde estan los archivos fuente */
     "types": []
   },
   "include": [

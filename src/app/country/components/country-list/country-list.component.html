@@ -1,0 +1,73 @@
+<section class="mt-5">
+    <table class="table table-md mt-2 w-full">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Icono</th>
+                <th>Bandera</th>
+                <th>Nombre</th>
+                <th>Capital</th>
+                <th>Población</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (country of respuestaConuntries(); track country.cca2; let index = $index ) {
+            <tr>
+                <td>{{index + 1}}</td>
+                <td><img [src]="country.flag" alt="{{country.name}}" width="15"></td>
+                <td><img [src]="country.flagSvg" alt="{{country.name}}" width="40"></td>
+                <td>{{country.name}}</td>
+                <td>{{country.capital ? country.capital : 'N/A'}}</td>
+
+                <td>
+                    <span class="badge badge-secondary">
+                        {{country.population |number}}
+                    </span>
+                </td>
+                <td>
+                    <a [routerLink]="['/country/by', country.cca2]" class="link-primary">
+                        mas informacion
+                    </a>
+
+                </td>
+
+            </tr>
+            }
+
+            @if (isLoading()) {
+            <tr>
+                <td colspan="8">
+                    <h3 class="text-center text-info">
+                        Buscando Paises...
+                    </h3>
+                </td>
+            </tr>
+            }
+
+            @if (errorMessage()) {
+            <tr>
+                <td colspan="8">
+                    <h3 class="text-center text-danger">
+                        {{ errorMessage()?.toString()  }}
+                    </h3>
+                </td>
+            </tr>
+            }
+
+            @if ( respuestaConuntries()?.length === 0 && !isLoading() &&
+            !errorMessage() ) {
+            <tr>
+                <td colspan="8">
+                    <h3 class="text-center text-warning">
+                        No se encontraron resultados
+                    </h3>
+                </td>
+            </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+</section>

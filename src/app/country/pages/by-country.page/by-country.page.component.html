@@ -1,0 +1,30 @@
+ 
+
+<country-search-input 
+     placeholder = "Buscar por nombre del pais"     
+    (value)="query.set( $event )"   
+/>
+
+<!-- Esto funciona y lo haremos diferente -->
+<!-- @if (countryResource.error()){
+     <h3>
+          {{ countryResource.error() }}
+     </h3>     
+} @if (countryResource.hasValue()) {
+     <country-list [respuestaConuntries]="countryResource.value()!" />
+} -->
+
+<!-- En el codigo del instrucor se hace asi, 
+<country-list [respuestaConuntries]="countryResource.value()"
+              [isEmpty]="countryResource.value().length === 0" 
+pero no es correcto porque se enviaba countryResource.value() aun 
+cuando era un Error En consola aparece:
+ERROR ResourceValueError: Resource is currently in an error state 
+Eso significa que: NO se puede leer cuando el resource está en error.
+por eso se hace la validacion con hasValue() para asegurarnos que solo se envie 
+el valor cuando no hay error -->
+<country-list [respuestaConuntries]="countryResource.hasValue() ? countryResource.value() : []"
+              [errorMessage]="countryResource.error()"          
+              [isEmpty]="countryResource.hasValue() && countryResource.value().length === 0"
+              [isLoading]="countryResource.isLoading()"
+ />

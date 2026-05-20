@@ -1,0 +1,18 @@
+ 
+ <!-- placeholder es la propiedad que se pasa al componente hijo del padre 
+      value es el valor emitido que viene del componente hijo  y aqui en el padre se recibe -->
+
+<country-search-input 
+     placeholder = "Buscar por capital del pais"     
+    (value)="query.set( $event )"   
+/>
+
+@if (countryResource.error()){
+     <h3>
+          {{ countryResource.error() }}
+     </h3>     
+} @if (countryResource.hasValue()) {
+     <country-list [respuestaConuntries]="countryResource.value()!" />
+}
+
+
