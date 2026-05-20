@@ -1,4 +1,6 @@
 # 04CountryApp v1
+
+```
 Temas puntuales
 En esta sección aprenderemos y reforzaremos temas como:
   1.- Rutas hijas
@@ -9,6 +11,7 @@ En esta sección aprenderemos y reforzaremos temas como:
   6.-Carga perezosa de módulos de rutas
 El objetivo es armar la aplicación que luego haremos funcionar.
 
+```
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.16.
 
